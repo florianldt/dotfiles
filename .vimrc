@@ -27,7 +27,6 @@ Plug 'prettier/vim-prettier', {
 Plug 'sheerun/vim-polyglot'
 Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'ycm-core/YouCompleteMe'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'rking/ag.vim'
 Plug 'preservim/nerdtree'
@@ -86,9 +85,6 @@ autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.gra
 " NerdTree
 map <Leader>n :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
-
-" YcM
-"nnoremap <Leader>gd : YcmCompleter GoToDefinition
 
 " Lightline
 set laststatus=2
