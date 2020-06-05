@@ -135,3 +135,16 @@ POWERLEVEL10K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs virtu
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 alias dotfiles='/usr/bin/git --git-dir=/Users/Florian/.dotfiles/ --work-tree=/Users/Florian'
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+# Set colors to match iTerm2 Terminal Colors
+export TERM=xterm-256color
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+
+[[ -d ~/.rbenv  ]] && \
+  export PATH=${HOME}/.rbenv/bin:${PATH} && \
+  eval "$(rbenv init -)"
+export RUBYOPT=-W0
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
