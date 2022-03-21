@@ -23,6 +23,7 @@ Plug 'prettier/vim-prettier', {
     \ 'python',
     \ 'ruby',
     \ 'html',
+    \ 'yaml',
     \ 'swift' ] }
 Plug 'sheerun/vim-polyglot'
 Plug 'dense-analysis/ale'
@@ -58,7 +59,7 @@ set clipboard=unnamed
 set number              " show line numbers
 set splitright          " open vsplit right
 syntax enable           " enable syntax processing
-set background=light
+" set background=light
 set background=dark
 colorscheme solarized
 set backspace=indent,eol,start
@@ -69,7 +70,7 @@ set expandtab
 
 
 " Higher cmd height
-set cmdheight=2
+set cmdheight=3
 
 " Show cmd
 set showcmd
@@ -80,7 +81,7 @@ set noswapfile
 " Prettier
 let g:prettier#autoformat = 0
 let g:prettier#autoformat_config_present = 1
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.html PrettierAsync
 
 " NerdTree
 map <Leader>n :NERDTreeToggle<CR>
@@ -221,3 +222,6 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+" For scss files.
+autocmd FileType scss setl iskeyword+=@-@
