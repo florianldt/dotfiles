@@ -40,6 +40,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/seoul256.vim'
 Plug 'rking/ag.vim'
 Plug 'preservim/nerdtree'
 Plug 'leafgarland/typescript-vim'
