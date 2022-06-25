@@ -71,9 +71,17 @@ set clipboard=unnamed
 set number              " show line numbers
 set splitright          " open vsplit right
 syntax enable           " enable syntax processing
-" set background=light
-set background=dark
-colorscheme solarized
+
+" Unified color scheme (default: dark)
+colo seoul256
+
+" Light color scheme
+colo seoul256-light
+
+" Switch
+" set background=dark
+set background=light
+
 set backspace=indent,eol,start
 " tab setting
 set tabstop=4
