@@ -3,6 +3,17 @@ filetype off
 "vim-plug 
 call plug#begin('~/.vim/plugged')
 
+" Install vim-plug if not found
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
+
+" Run PlugInstall if there are missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
+
 " Make sure you use single quotes
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
@@ -29,6 +40,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/seoul256.vim'
 Plug 'rking/ag.vim'
 Plug 'preservim/nerdtree'
 Plug 'leafgarland/typescript-vim'
@@ -59,9 +71,17 @@ set clipboard=unnamed
 set number              " show line numbers
 set splitright          " open vsplit right
 syntax enable           " enable syntax processing
-" set background=light
-set background=dark
-colorscheme solarized
+
+" Unified color scheme (default: dark)
+colo seoul256
+
+" Light color scheme
+colo seoul256-light
+
+" Switch
+" set background=dark
+set background=light
+
 set backspace=indent,eol,start
 " tab setting
 set tabstop=4
